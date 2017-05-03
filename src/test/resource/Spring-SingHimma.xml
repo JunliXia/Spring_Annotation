@@ -5,11 +5,10 @@
        http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
     
     <!-- byName自动装配 -->
-    <bean id="xiaoXia" class="com.spring.SingHimma" autowire="byType">
-        
-    </bean>
-
-
+    <bean id="xiaoXia" class="com.spring.SingHimma" autowire="byName"></bean>
+    
+    <!-- byType自动装配 -->
+    <bean id="xiaoHong" class="com.spring.SingHimma" autowire="byType"></bean>
     <bean id="song" class="com.spring.FadedSong"></bean>
     
 

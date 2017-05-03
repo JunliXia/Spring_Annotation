@@ -21,6 +21,13 @@ public class SingHimmaTest {
 		People xiaoXia = (People) applicationContext.getBean("xiaoXia");
 		xiaoXia.doWorking();
 	}
+	
+	@Test
+	public void testxiaoHong() {
+		People xiaoHong = (People) applicationContext.getBean("xiaoHong");
+		xiaoHong.doWorking();
+	}
+	
 
 	@After
 	public void destroy() {
