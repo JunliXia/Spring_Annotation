@@ -2,7 +2,7 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
    xsi:schemaLocation="http://www.springframework.org/schema/beans 
-       http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+       http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
     
     <!-- byName自动装配 ，通过setter注入-->
     <!-- 把与Bean的属性具有相同名字(或者ID)的其他Bean自动装配到Bean的对应属性中。-->
@@ -32,13 +32,17 @@
     <!-- 其局限性与上述byType一致。 -->
     <!--
     <bean id="xiaoGang" class="com.spring.SingHimma" autowire="constructor"></bean>
-    <bean id="fadedSong" class="com.spring.FadedSong"></bean>
+    <bean id="fadedSong" class="com.spring.FadedSong"  primary="true"></bean>
     <bean id="sugerSong" class="com.spring.SugerSong" ></bean>
     -->
     
+	
+    <!-- autodetect自动装配 -->
+    <!-- 首先尝试使用constructor进行自动装配。如果失败，再尝试使用byType进行自动装配 -->
+    <bean id="xiaoMing" class="com.spring.SingHimma" autowire="autodetect"></bean>
+    <bean id="fadedSong" class="com.spring.FadedSong" primary="true"></bean>
+    <bean id="sugerSong" class="com.spring.SugerSong" ></bean>
 
-    
-    
 
 </beans>
  

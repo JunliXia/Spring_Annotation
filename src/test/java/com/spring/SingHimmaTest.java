@@ -34,7 +34,12 @@ public class SingHimmaTest {
 		xiaoGang.doWorking();
 	}
 		
-
+	@Test
+	public void testxiaoMing() {
+		People xiaoMing = (People) applicationContext.getBean("xiaoMing");
+		xiaoMing.doWorking();
+	}
+		
 	@After
 	public void destroy() {
 		// 关闭容器，演示destory-method
