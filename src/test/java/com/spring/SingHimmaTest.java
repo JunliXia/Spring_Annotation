@@ -28,6 +28,12 @@ public class SingHimmaTest {
 		xiaoHong.doWorking();
 	}
 	
+	@Test
+	public void testxiaoGang() {
+		People xiaoGang = (People) applicationContext.getBean("xiaoGang");
+		xiaoGang.doWorking();
+	}
+		
 
 	@After
 	public void destroy() {

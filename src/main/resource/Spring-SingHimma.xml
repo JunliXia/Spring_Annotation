@@ -2,18 +2,43 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
    xsi:schemaLocation="http://www.springframework.org/schema/beans 
-       http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+       http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
     
-    <!-- byName自动装配 -->
-    <bean id="xiaoXia" class="com.spring.SingHimma" autowire="byName">
-        
-    </bean>
+    <!-- byName自动装配 ，通过setter注入-->
+    <!-- 把与Bean的属性具有相同名字(或者ID)的其他Bean自动装配到Bean的对应属性中。-->
+    <!-- 如果没有跟属性的名字相匹配的Bean,则该属性不自动装配  -->
+    <!-- 
+    <bean id="xiaoXia" class="com.spring.SingHimma" autowire="byName"></bean>
+    <bean id="song" class="com.spring.FadedSong"></bean> 
+    -->
+    
+    
+    
+    <!-- byType自动装配 ，通过setter注入-->
+	<!-- 把与Bean的属性具有相同类型的其他Bean自动装配到Bean的对应属性中。 -->
+	<!-- 如果没有跟属性的类型相匹配的Bean，则该属性不被装配 -->
+	<!-- 如果有多个同属性的Bean满足条件则会抛出异常-->
+	<!-- 可以通过primary设置为true使其标识成首选-->
+	<!-- 在Spring in action 第三版上说因为primary默认为true，所以要设置其他同类型的所有primary为false。但是目前实际测试，并不需要将其他的设置为false-->
+	<!-- 还可以通过autowire-candidate为false，使其自动装配时忽略该Bean-->
+   	<!--
+    <bean id="xiaoHong" class="com.spring.SingHimma" autowire="byType"></bean>
+    <bean id="fadedSong" class="com.spring.FadedSong" primary="true"></bean>
+    <bean id="sugerSong" class="com.spring.SugerSong" autowire-candidate="false"></bean>
+	-->
+    
+    <!--constructor自动装配，通过构造器注入 -->
+    <!-- 把与Bean的构造器入参具有相同类型的其他Bean自动装配到Bean构造器对应入参中。 -->
+    <!-- 其局限性与上述byType一致。 -->
+    <!--
+    <bean id="xiaoGang" class="com.spring.SingHimma" autowire="constructor"></bean>
+    <bean id="fadedSong" class="com.spring.FadedSong"></bean>
+    <bean id="sugerSong" class="com.spring.SugerSong" ></bean>
+    -->
+    
 
-
-    <bean id="song" class="com.spring.FadedSong"></bean>
-    
-    
     
     
 
 </beans>
+ 
