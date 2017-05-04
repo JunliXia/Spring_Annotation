@@ -1,4 +1,4 @@
-package com.spring;
+package com.spring.autowiring;
 
 public class Himma implements People {
 	//默认一天搬100块砖

@@ -1,4 +1,4 @@
-package com.spring;
+package com.spring.autowiring;
 
 public class SingHimma extends Himma{
 	private Song song;
