@@ -1,4 +1,4 @@
-package com.spring;
+package com.spring.autowiring;
 
 import org.junit.After;
 import org.junit.Before;
@@ -8,7 +8,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.spring.autowiring.People;
 
-public class SingHimmaTest {
+public class AutowiringTest {
 
 	ApplicationContext applicationContext;
 
